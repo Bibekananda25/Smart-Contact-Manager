@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<section>
+	<div style="background-image: url('/image/login.jpg'); padding:100px;">
+		<div class="container text-white" >
+			<div class="row">
+				<div class="col-md-8 offset-md-2">
+					<div class="my-card mt-3">
+
+						<div  th:if="${session.message}"
+							th:classappend="${session.message.type}" class="alert text-center"
+							role="alert">
+							<p th:text="${session.message.content}"></p>
+
+							<th:block th:text="${#session.removeAttribute('message')}"></th:block>
+						</div>
+
+						<div class="text-center">
+							<img style="width: 80px" th:src="@{/image/register.png}">
+						</div>
+
+						<h1 class="text-center">Register Here!!</h1>
+						<form action="" th:action="@{/signup}" method="post"
+							th:object="${user}">
+
+							<div class="mb-3">
+								<label for="name-field" class="form-label">Name</label> <input
+									type="text" class="form-control" id="name-field"
+									aria-describedby="emailHelp" placeholder="Enter Name"
+									required="required" th:value="${user.name}" name="name" />
+							</div>
+
+							<div class="mb-3">
+								<label for="email-field" class="form-label">Email</label> <input
+									type="email" class="form-control" id="email-field"
+									aria-describedby="emailHelp" placeholder="Enter email"
+									required="required" th:value="${user.email}" name="email" />
+							</div>
+
+							<div class="mb-3">
+								<label for="name-field" class="form-label">Password</label> <input
+									type="password" class="form-control" id="password-field"
+									aria-describedby="emailHelp" placeholder="Enter Password"
+									required="required" th:value="${user.password}" name="password" />
+							</div>
+
+							<div class="mb-3">
+								<textarea th:text="${user.about}" rows="10"
+									class="form-control" placeholder="Write Something"  name="about"></textarea>
+
+							</div>
+							<div class="form-group from-check text-center mb-3">
+								<input type="checkbox" name="agreement" class="form-check-input"
+									id="checkbox" /> <label for="agreemanet">Accept term
+									and conditions</label>
+
+
+							</div>
+
+							<div class="container mb-3 text-center">
+								<button type="submit"
+									class="btn bg-primary btn-block text-white">Submit</button>
+
+								<button type="reset"
+									class="btn btn-warning btn-block text-white">Reset</button>
+							</div>
+
+
+						</form>
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</section>
+</body>
+</html>

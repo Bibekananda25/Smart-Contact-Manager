@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<section
+		class="banner d-flex justify-content-center align-items-center">
+		<div class="text-center">
+			<div class="about-section">
+				<h1>About Us Page</h1>
+				<p>contact manager is a software program that enables users to
+					easily store and find contact information, such as names,
+					addresses, and telephone numbers.</p>
+				<p>In management terminology, advanced contact managers can be
+					called individual resource management (IRM) or contact management
+					(CM) tools</p>
+			</div>
+
+			<h2 style="text-align: center ">Our Team</h2>
+			<div class="row">
+				<div class="column text-dark">
+					<div class="card">
+						<img th:src="@{/image/bibek.png}" alt="Jane" style="width: 100%">
+						<div class="container1">
+							<h2>BIBEK</h2>
+							<p class="title">CEO & Founder</p>
+							<p></p>
+							<p>bibek@example.com</p>
+							<p>
+								<button class="button">Contact</button>
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="column text-dark">
+					<div class="card">
+						<img th:src="@{/image/bibek.png}" alt="Mike" style="width: 100%">
+						<div class="container1">
+							<h2>NIRMALYA</h2>
+							<p class="title">Art Director</p>
+							<p></p>
+							<p>nirmalya@example.com</p>
+							<p>
+								<button class="button">Contact</button>
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="column text-dark">
+					<div class="card">
+						<img th:src="@{/image/bibek.png}" alt="John" style="width: 100%">
+						<div class="container1">
+							<h2>DEBASISH</h2>
+							<p class="title">Designer</p>
+							<p></p>
+							<p>deba@example.com</p>
+							<p>
+								<button class="button">Contact</button>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
