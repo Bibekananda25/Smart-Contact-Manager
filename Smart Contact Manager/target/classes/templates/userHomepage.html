@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="baseUser::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<section
+		class=" banner-user d-flex justify-content-center align-items-center">
+		<div>
+			<h1 class="nav-item text-uppercase">
+				<a class="nav-link  text-white">HELLO!!! <samp th:text="${user.name}"></samp></a>
+			</h1>
+
+
+			<div class="search-container my-3 text-center ">
+				<a href="#" th:href="@{/user/add_contact}" class=" btn btn-success"><i
+					class="fas fa-address-book"></i> ADD CONTACT</a>
+			</div>
+		</div>
+
+	</section>
+</body>
+</html>
